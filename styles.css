@@ -8,31 +8,25 @@ body, html {
 
 header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-header .container {
-    text-align: left;
-    margin-bottom: 10px;
-}
-
-header h1 {
+header .logo {
     font-size: 2.5em;
     margin: 0;
 }
 
-header h2 {
+header .logo span {
     font-size: 1em;
-    margin: 0;
     color: #bbb;
 }
 
 nav {
     width: 100%;
-    text-align: right;
+    text-align: center;
 }
 
 nav ul {
@@ -40,7 +34,7 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 nav ul li {
@@ -72,4 +66,31 @@ nav ul li a:hover::after {
     position: absolute;
     top: 60px;
     left: 0;
+}
+
+.content {
+    padding: 20px;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+}
+
+.about-container img {
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-text ul li {
+    padding: 5px 0;
 }
