@@ -26,22 +26,21 @@ nav .logo {
 }
 
 nav .logo .name {
-    font-size: 1.8rem;
+    font-size: 2rem; /* Adjust size to be bigger */
     font-weight: 400; /* Unbold */
 }
 
 nav .logo .qualifications {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 400;
 }
 
 nav ul {
     list-style: none;
-    margin: 0;
+    margin: 0 auto; /* Center the navigation menu */
     padding: 0;
     display: flex;
     justify-content: center; /* Center the navigation menu */
-    flex: 1; /* Ensure the navigation menu takes up available space */
 }
 
 nav ul li {
@@ -170,3 +169,5 @@ form button {
 form button:hover {
     background-color: #0056b3;
 }
+
+/* Force update */
