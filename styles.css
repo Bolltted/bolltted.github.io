@@ -1,175 +1,61 @@
-body, html {
+/* General styles */
+body {
     margin: 0;
-    padding: 0;
     font-family: 'Montserrat', sans-serif;
+    background-color: #333;
     color: white;
-    background-color: #000;
 }
 
 header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 50px;
+    background-color: #333;
 }
 
-nav .logo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align logo text to the left */
-    line-height: 1.2;
+header h1, header h2 {
+    margin: 0;
+    padding: 0;
 }
 
-nav .logo .name {
-    font-size: 2rem; /* Adjust size to be bigger */
-    font-weight: 400; /* Unbold */
+header h1 {
+    font-size: 2.5em;
+    font-weight: normal;
 }
 
-nav .logo .qualifications {
-    font-size: 1rem;
-    font-weight: 400;
+header h2 {
+    font-size: 1em;
+    font-weight: normal;
+    margin-top: 5px;
 }
 
 nav ul {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
     display: flex;
-    justify-content: center; /* Center the navigation menu */
-    flex-grow: 1; /* Allow the menu to take up remaining space */
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin-left: 20px;
 }
 
 nav ul li a {
-    color: white;
     text-decoration: none;
-    font-size: 1rem;
-    font-weight: 400;
-    position: relative;
-    padding-bottom: 5px;
-}
-
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    display: block;
-    margin-top: 5px;
-    right: 0;
-    background: white;
-    transition: width 0.4s ease;
-    -webkit-transition: width 0.4s ease;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-    left: 0;
-    background: white;
-}
-
-.hero {
-    height: 100vh;
-    background: url('206 mountain_upscayl_3x_realesrgan-x4plus.jpg') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-attachment: fixed;
-}
-
-.content {
-    padding: 100px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.about-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-}
-
-.about-container img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-.about-text {
-    max-width: 600px;
-}
-
-.about-text ul {
-    list-style: none;
-    padding: 0;
-}
-
-.about-text ul li {
-    background: url('bullet.png') no-repeat left center;
-    padding-left: 20px;
-    margin-bottom: 10px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-}
-
-.gallery-grid img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-form label {
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-form button {
-    padding: 10px 20px;
-    background-color: #007BFF;
     color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 1.2em;
+    transition: all 0.3s;
 }
 
-form button:hover {
-    background-color: #0056b3;
+nav ul li a:hover {
+    border-bottom: 2px solid white;
 }
 
-/* Force update */
+/* Background image */
+.bg-image {
+    background-image: url('206_mountain_upscayl_3x_realesrgan-x4plus.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
