@@ -1,32 +1,39 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
     background-color: #000;
-    color: #fff;
 }
 
 header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
 }
 
-header .logo {
-    font-size: 2.5em;
-    margin: 0;
+nav .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align logo text to the left */
+    line-height: 1.2;
 }
 
-header .logo span {
-    font-size: 1em;
-    color: #bbb;
+nav .logo .name {
+    font-size: 2rem; /* Adjust size to be bigger */
+    font-weight: 400; /* Unbold */
 }
 
-nav {
-    width: 100%;
-    text-align: center;
+nav .logo .qualifications {
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 nav ul {
@@ -34,50 +41,71 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center the navigation menu */
+    flex-grow: 1; /* Allow the menu to take up remaining space */
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin: 0 15px;
 }
 
 nav ul li a {
+    color: white;
     text-decoration: none;
-    color: #fff;
-    font-size: 1.2em;
+    font-size: 1rem;
+    font-weight: 400;
     position: relative;
+    padding-bottom: 5px;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: white;
+    transition: width 0.4s ease;
+    -webkit-transition: width 0.4s ease;
 }
 
 nav ul li a:hover::after {
-    content: '';
-    display: block;
-    height: 2px;
-    background: #fff;
-    position: absolute;
     width: 100%;
     left: 0;
-    bottom: -5px;
+    background: white;
 }
 
-.background-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    position: relative;
+.hero {
+    height: 100vh;
+    background: url('206 mountain_upscayl_3x_realesrgan-x4plus.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-attachment: fixed;
 }
 
 .content {
-    padding: 20px;
+    padding: 100px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .about-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    text-align: left;
 }
 
 .about-container img {
-    max-width: 200px;
-    margin-right: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
 }
 
 .about-text {
@@ -90,5 +118,58 @@ nav ul li a:hover::after {
 }
 
 .about-text ul li {
-    padding: 5px 0;
+    background: url('bullet.png') no-repeat left center;
+    padding-left: 20px;
+    margin-bottom: 10px;
 }
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Force update */
