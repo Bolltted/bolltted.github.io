@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Keylan Tarasoff</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background-color: #000;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2rem;
+            border-bottom: 2px solid grey;
+            padding-bottom: 10px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .gallery img {
+            width: calc(33.333% - 10px);
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gallery</h1>
+        <div class="gallery">
+            <!-- Add your images here -->
+            <img src="image1.jpg" alt="Description of image 1">
+            <img src="image2.jpg" alt="Description of image 2">
+            <img src="image3.jpg" alt="Description of image 3">
+            <!-- More images -->
+        </div>
+    </div>
+</body>
+</html>

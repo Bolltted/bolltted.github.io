@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Keylan Tarasoff</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background-color: #000;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2rem;
+            border-bottom: 2px solid grey;
+            padding-bottom: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: none;
+            background-color: #222;
+            color: #fff;
+        }
+        input[type="submit"] {
+            background-color: grey;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact</h1>
+        <form action="submit_form.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Send Message">
+        </form>
+    </div>
+</body>
+</html>
