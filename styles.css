@@ -14,7 +14,7 @@ header {
     background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
 }
@@ -22,21 +22,18 @@ header {
 nav .logo {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the logo text */
+    align-items: flex-start; /* Align logo text to the left */
     line-height: 1.2;
-    margin-bottom: 10px;
 }
 
 nav .logo .name {
     font-size: 2rem; /* Adjust size to be bigger */
     font-weight: 400; /* Unbold */
-    text-align: center; /* Center the text */
 }
 
 nav .logo .qualifications {
     font-size: 1rem;
     font-weight: 400;
-    text-align: center; /* Center the text */
 }
 
 nav ul {
@@ -45,6 +42,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center; /* Center the navigation menu */
+    flex-grow: 1; /* Allow the menu to take up remaining space */
 }
 
 nav ul li {
@@ -173,3 +171,5 @@ form button {
 form button:hover {
     background-color: #0056b3;
 }
+
+/* Force update */
