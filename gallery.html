@@ -1,46 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Keylan Tarasoff</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            color: #fff;
-            background-color: #000;
-        }
-        .container {
-            padding: 20px;
-        }
-        h1 {
-            font-size: 2rem;
-            border-bottom: 2px solid grey;
-            padding-bottom: 10px;
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .gallery img {
-            width: calc(33.333% - 10px);
-            height: auto;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
         <h1>Gallery</h1>
-        <div class="gallery">
-            <!-- Add your images here -->
-            <img src="image1.jpg" alt="Description of image 1">
-            <img src="image2.jpg" alt="Description of image 2">
-            <img src="image3.jpg" alt="Description of image 3">
-            <!-- More images -->
+        <div class="gallery-grid">
+            <img src="image1.jpg" alt="Gallery Image 1">
+            <img src="image2.jpg" alt="Gallery Image 2">
+            <img src="image3.jpg" alt="Gallery Image 3">
+            <img src="image4.jpg" alt="Gallery Image 4">
         </div>
     </div>
 </body>
