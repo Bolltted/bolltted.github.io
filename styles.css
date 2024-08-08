@@ -1,7 +1,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: white;
     background-color: #000;
 }
@@ -143,9 +143,4 @@ form button {
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-form button:hover {
-    background-color: #0056b3;
-}
+    transition: background
