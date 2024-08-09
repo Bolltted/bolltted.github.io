@@ -12,42 +12,27 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background-color: #000; /* Ensure the top bar is solid black */
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1); /* Add a shadow to prevent image seeping */
 }
 
-nav .logo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    line-height: 1.2;
-}
-
-nav .logo .name {
-    font-size: 2rem;
-    font-weight: 400;
-}
-
-nav .logo .qualifications {
-    font-size: 1rem;
-    font-weight: 400;
-}
-
+/* Allow manual positioning with pixels */
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    flex-grow: 1;
+    position: relative;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li a {
@@ -59,25 +44,32 @@ nav ul li a {
     padding-bottom: 5px;
 }
 
-nav ul li a::after {
-    content: '';
+/* Positioning classes for manual pixel positioning */
+.nav-position {
     position: absolute;
-    width: 0;
-    height: 2px;
-    display: block;
-    margin-top: 5px;
-    right: 0;
-    background: white;
-    transition: width 0.4s ease;
-    -webkit-transition: width 0.4s ease;
 }
 
-nav ul li a:hover::after {
-    width: 100%;
-    left: 0;
-    background: white;
+.nav-home {
+    left: 50px; /* Example positioning for Home link */
+    top: 10px;
 }
 
+.nav-about {
+    left: 150px; /* Example positioning for About link */
+    top: 10px;
+}
+
+.nav-gallery {
+    left: 250px; /* Example positioning for Gallery link */
+    top: 10px;
+}
+
+.nav-contact {
+    left: 350px; /* Example positioning for Contact link */
+    top: 10px;
+}
+
+/* Other existing styles remain unchanged */
 .hero {
     height: 100vh;
     background: url('206 mountain_upscayl_3x_realesrgan-x4plus.jpg') no-repeat center center/cover;
@@ -93,233 +85,4 @@ nav ul li a:hover::after {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-}
-
-.about-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-}
-
-.about-container img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-.about-text {
-    max-width: 600px;
-}
-
-.about-text ul {
-    list-style: none;
-    padding: 0;
-}
-
-.about-text ul li {
-    background: url('bullet.png') no-repeat left center;
-    padding-left: 20px;
-    margin-bottom: 10px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-}
-
-.gallery-grid img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-form label {
-    font-size: 1It seems that the response got cut off. Here is the full content you need to copy and paste into your files:
-
-### 5. **styles.css**
-```css
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Metropolis', sans-serif;
-    letter-spacing: 3%;
-    color: white;
-    background-color: #000;
-}
-
-header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-nav .logo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    line-height: 1.2;
-}
-
-nav .logo .name {
-    font-size: 2rem;
-    font-weight: 400;
-}
-
-nav .logo .qualifications {
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 400;
-    position: relative;
-    padding-bottom: 5px;
-}
-
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    display: block;
-    margin-top: 5px;
-    right: 0;
-    background: white;
-    transition: width 0.4s ease;
-    -webkit-transition: width 0.4s ease;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-    left: 0;
-    background: white;
-}
-
-.hero {
-    height: 100vh;
-    background: url('206 mountain_upscayl_3x_realesrgan-x4plus.jpg') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-attachment: fixed;
-}
-
-.content {
-    padding: 100px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.about-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-}
-
-.about-container img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-.about-text {
-    max-width: 600px;
-}
-
-.about-text ul {
-    list-style: none;
-    padding: 0;
-}
-
-.about-text ul li {
-    background: url('bullet.png') no-repeat left center;
-    padding-left: 20px;
-    margin-bottom: 10px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-}
-
-.gallery-grid img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-form label {
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-form button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-form button:hover {
-    background-color: #0056b3;
 }
