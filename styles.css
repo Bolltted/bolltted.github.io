@@ -21,40 +21,74 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 1); /* Add a shadow to prevent image seeping */
 }
 
-/* Underline animation on hover */
+/* Custom size for name and qualifications */
+nav .logo .name {
+    font-size: 3rem; /* Larger font size for the name */
+    font-weight: 400;
+}
+
+nav .logo .qualifications {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Allow manual positioning with pixels */
 nav ul {
-    list-style: none; /* Removes bullets */
+    list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: flex-start; /* Horizontally align items */
+    position: relative;
 }
 
 nav ul li {
-    margin-right: 20px; /* Add space between navigation items */
+    margin: 0;
+    padding: 0;
 }
 
-nav ul li a::after {
-    content: '';
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Positioning classes for manual pixel positioning */
+.nav-position {
     position: absolute;
-    width: 0;
-    height: 2px;
-    display: block;
-    margin-top: 5px;
-    right: 0;
-    background: white;
-    transition: width 0.4s ease;
 }
 
-nav ul li a:hover::after {
-    width: 100%;
-    left: 0;
-    background: white;
+.nav-home {
+    left: 50px; /* Example positioning for Home link */
+    top: 10px;
 }
 
+.nav-about {
+    left: 150px; /* Example positioning for About link */
+    top: 10px;
+}
+
+.nav-gallery {
+    left: 250px; /* Example positioning for Gallery link */
+    top: 10px;
+}
+
+.nav-contact {
+    left: 350px; /* Example positioning for Contact link */
+    top: 10px;
+}
+
+/* Larger font size for the About page content */
+.about-container p {
+    font-size: 2rem; /* Increase font size on the About page */
+}
+
+/* Other existing styles remain unchanged */
 .hero {
     height: 100vh;
-    background: url('path_to_your_background_image.jpg') no-repeat center center/cover; /* Ensure correct path */
+    background: url('206 mountain_upscayl_3x_realesrgan-x4plus.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
