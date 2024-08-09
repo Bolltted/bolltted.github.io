@@ -1,3 +1,4 @@
+/* General Styles */
 body, html {
     margin: 0;
     padding: 0;
@@ -12,93 +13,64 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    background-color: #000; /* Ensure the top bar is solid black */
+    background-color: #000;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 40px; /* Doubled the height by increasing padding */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1); /* Add a shadow to prevent image seeping */
+    padding: 20px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 }
 
-/* Custom size for name and qualifications */
-nav .logo .name {
-    font-size: 5rem; /* Larger font size for the name */
-    font-weight: 400;
-}
-
-nav .logo .qualifications {
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-/* Allow manual positioning with pixels */
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    position: relative;
-}
-
-nav ul li {
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 400;
-    position: relative;
-    padding-bottom: 5px;
-}
-
-/* Positioning classes for manual pixel positioning */
-.nav-position {
+/* Underline animation on hover */
+nav ul li a::after {
+    content: '';
     position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: white;
+    transition: width 0.4s ease;
 }
 
-.nav-home {
-    left: 800px; /* Example positioning for Home link */
-    top: 10px;
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    background: white;
 }
 
-.nav-about {
-    left: 900px; /* Example positioning for About link */
-    top: 10px;
-}
+/* Positioning and Size Classes (Customizable for Each Page) */
 
-.nav-gallery {
-    left: 1000px; /* Example positioning for Gallery link */
-    top: 10px;
-}
+/* Home Page */
+.home-nav-home { left: 800px; top: 10px; font-size: 2rem; }
+.home-nav-about { left: 900px; top: 10px; font-size: 2rem; }
+.home-nav-gallery { left: 1000px; top: 10px; font-size: 2rem; }
+.home-nav-contact { left: 1100px; top: 10px; font-size: 2rem; }
+.home-name { left: 20px; top: 10px; font-size: 5rem; }
+.home-qualifications { left: 20px; top: 20px; font-size: 2rem; }
 
-.nav-contact {
-    left: 1100px; /* Example positioning for Contact link */
-    top: 10px;
-}
+/* About Page */
+.about-nav-home { left: 800px; top: 20px; font-size: 1.1rem; }
+.about-nav-about { left: 900px; top: 20px; font-size: 1.1rem; }
+.about-nav-gallery { left: 1000px; top: 20px; font-size: 1.1rem; }
+.about-nav-contact { left: 1100px; top: 20px; font-size: 1.1rem; }
+.about-name { left: 20px; top: 10px; font-size: 5rem; }
+.about-qualifications { left: 20px; top: 20px; font-size: 2rem; }
 
-/* Larger font size for the About page content */
-.about-container p {
-    font-size: 5rem; /* Increase font size on the About page */
-}
+/* Gallery Page */
+.gallery-nav-home { left: 800px; top: 30px; font-size: 1.2rem; }
+.gallery-nav-about { left: 900px; top: 30px; font-size: 1.2rem; }
+.gallery-nav-gallery { left: 1000px; top: 30px; font-size: 1.2rem; }
+.gallery-nav-contact { left: 1100px; top: 30px; font-size: 1.2rem; }
+.gallery-name { left: 20px; top: 10px; font-size: 5rem; }
+.gallery-qualifications { left: 20px; top: 20px; font-size: 2rem; }
 
-/* Other existing styles remain unchanged */
-.hero {
-    height: 100vh;
-    background: url('206 mountain_upscayl_3x_realesrgan-x4plus.jpg') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-attachment: fixed;
-}
-
-.content {
-    padding: 100px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
+/* Contact Page */
+.contact-nav-home { left: 800px; top: 40px; font-size: 1.3rem; }
+.contact-nav-about { left: 900px; top: 40px; font-size: 1.3rem; }
+.contact-nav-gallery { left: 1000px; top: 40px; font-size: 1.3rem; }
+.contact-nav-contact { left: 1100px; top: 40px; font-size: 1.3rem; }
+.contact-name { left: 20px; top: 10px; font-size: 5rem; }
+.contact-qualifications { left: 20px; top: 20px; font-size: 2rem; }
