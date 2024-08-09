@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
     margin: 0;
-    padding: 0;
+    padding-top: 100px; /* Padding to prevent content from being hidden under the header */
     font-size: 13px;
     line-height: 1.6em;
     font-family: "proxima-nova", sans-serif;
@@ -15,7 +15,7 @@ html {
     -ms-text-size-adjust: 100%;
 }
 
-/* Header Styles */
+/* Header Styles (applies to all pages) */
 header#topBar {
     position: fixed;
     width: 100%;
@@ -84,6 +84,7 @@ nav ul li a:hover {
     border-color: #fff;
 }
 
+/* Mobile Navigation (applies to all pages) */
 #mobile-navigation {
     display: none;
     cursor: pointer;
@@ -93,7 +94,7 @@ nav ul li a:hover {
     text-align: center;
 }
 
-/* Responsive Styles */
+/* Responsive Styles (applies to all pages) */
 @media screen and (max-width: 768px) {
     .siteTitle {
         float: none;
@@ -112,17 +113,20 @@ nav ul li a:hover {
     }
 }
 
-/* Image Block Styles */
-.image-block-wrapper {
-    position: relative;
-    padding-bottom: 66.67%;
+/* Image Block Styles (specific to About page) */
+.image-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.image-row .image-block-wrapper {
+    width: 32%; /* Adjust this to make sure the images aren't too large */
     overflow: hidden;
 }
 
-.image-block-wrapper img {
-    display: block;
-    object-fit: cover;
+.image-row img {
     width: 100%;
-    height: 100%;
-    object-position: 50% 50%;
+    object-fit: cover;
 }
