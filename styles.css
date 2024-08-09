@@ -1,7 +1,8 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Metropolis', sans-serif;
+    letter-spacing: 3%;
     color: white;
     background-color: #000;
 }
@@ -22,13 +23,13 @@ header {
 nav .logo {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align logo text to the left */
+    align-items: flex-start;
     line-height: 1.2;
 }
 
 nav .logo .name {
-    font-size: 2rem; /* Adjust size to be bigger */
-    font-weight: 400; /* Unbold */
+    font-size: 2rem;
+    font-weight: 400;
 }
 
 nav .logo .qualifications {
@@ -41,9 +42,159 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* Center the navigation menu */
-    flex-grow: 1; /* Allow the menu to take up remaining space */
-    margin-left: 800px; /* Adjust this value to move the menu left or right */
+    justify-content: center;
+    flex-grow: 1;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: white;
+    transition: width 0.4s ease;
+    -webkit-transition: width 0.4s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    background: white;
+}
+
+.hero {
+    height: 100vh;
+    background: url('206 mountain_upscayl_3x_realesrgan-x4plus.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-attachment: fixed;
+}
+
+.content {
+    padding: 100px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.about-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-text ul li {
+    background: url('bullet.png') no-repeat left center;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form label {
+    font-size: 1It seems that the response got cut off. Here is the full content you need to copy and paste into your files:
+
+### 5. **styles.css**
+```css
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Metropolis', sans-serif;
+    letter-spacing: 3%;
+    color: white;
+    background-color: #000;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+}
+
+nav .logo .name {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+nav .logo .qualifications {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 nav ul li {
@@ -172,5 +323,3 @@ form button {
 form button:hover {
     background-color: #0056b3;
 }
-
-/* Force update */
