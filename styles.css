@@ -17,8 +17,19 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 40px 40px; /* Doubled the height by increasing padding */
     box-shadow: 0 0 10px rgba(0, 0, 0, 1); /* Add a shadow to prevent image seeping */
+}
+
+/* Custom size for name and qualifications */
+nav .logo .name {
+    font-size: 5rem; /* Larger font size for the name */
+    font-weight: 400;
+}
+
+nav .logo .qualifications {
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 /* Allow manual positioning with pixels */
@@ -50,23 +61,28 @@ nav ul li a {
 }
 
 .nav-home {
-    left: 50px; /* Example positioning for Home link */
+    left: 800px; /* Example positioning for Home link */
     top: 10px;
 }
 
 .nav-about {
-    left: 150px; /* Example positioning for About link */
+    left: 900px; /* Example positioning for About link */
     top: 10px;
 }
 
 .nav-gallery {
-    left: 250px; /* Example positioning for Gallery link */
+    left: 1000px; /* Example positioning for Gallery link */
     top: 10px;
 }
 
 .nav-contact {
-    left: 350px; /* Example positioning for Contact link */
+    left: 1100px; /* Example positioning for Contact link */
     top: 10px;
+}
+
+/* Larger font size for the About page content */
+.about-container p {
+    font-size: 5rem; /* Increase font size on the About page */
 }
 
 /* Other existing styles remain unchanged */
