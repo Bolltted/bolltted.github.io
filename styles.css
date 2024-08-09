@@ -1,8 +1,7 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Metropolis', sans-serif;
-    letter-spacing: 3%;
+    font-family: 'Montserrat', sans-serif;
     color: white;
     background-color: #000;
 }
@@ -12,19 +11,24 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    background-color: #000; /* Ensure the top bar is solid black */
+    background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 20px; /* Doubled the height by increasing padding */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1); /* Add a shadow to prevent image seeping */
+    padding: 10px 20px;
 }
 
-/* Custom size for name and qualifications */
+nav .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align logo text to the left */
+    line-height: 1.2;
+}
+
 nav .logo .name {
-    font-size: 3rem; /* Larger font size for the name */
-    font-weight: 400;
+    font-size: 2rem; /* Adjust size to be bigger */
+    font-weight: 400; /* Unbold */
 }
 
 nav .logo .qualifications {
@@ -32,18 +36,18 @@ nav .logo .qualifications {
     font-weight: 400;
 }
 
-/* Allow manual positioning with pixels */
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    position: relative;
+    justify-content: center; /* Center the navigation menu */
+    flex-grow: 1; /* Allow the menu to take up remaining space */
+    margin-left: 800px; /* Adjust this value to move the menu left or right */
 }
 
 nav ul li {
-    margin: 0;
-    padding: 0;
+    margin: 0 15px;
 }
 
 nav ul li a {
@@ -55,37 +59,25 @@ nav ul li a {
     padding-bottom: 5px;
 }
 
-/* Positioning classes for manual pixel positioning */
-.nav-position {
+nav ul li a::after {
+    content: '';
     position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: white;
+    transition: width 0.4s ease;
+    -webkit-transition: width 0.4s ease;
 }
 
-.nav-home {
-    left: 50px; /* Example positioning for Home link */
-    top: 10px;
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    background: white;
 }
 
-.nav-about {
-    left: 150px; /* Example positioning for About link */
-    top: 10px;
-}
-
-.nav-gallery {
-    left: 250px; /* Example positioning for Gallery link */
-    top: 10px;
-}
-
-.nav-contact {
-    left: 350px; /* Example positioning for Contact link */
-    top: 10px;
-}
-
-/* Larger font size for the About page content */
-.about-container p {
-    font-size: 2rem; /* Increase font size on the About page */
-}
-
-/* Other existing styles remain unchanged */
 .hero {
     height: 100vh;
     background: url('206 mountain_upscayl_3x_realesrgan-x4plus.jpg') no-repeat center center/cover;
@@ -102,3 +94,83 @@ nav ul li a {
     margin: 0 auto;
     text-align: center;
 }
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.about-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-text ul li {
+    background: url('bullet.png') no-repeat left center;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Force update */
