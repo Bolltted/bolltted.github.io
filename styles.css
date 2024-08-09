@@ -43,7 +43,7 @@ nav ul {
     display: flex;
     justify-content: center; /* Center the navigation menu */
     flex-grow: 1; /* Allow the menu to take up remaining space */
-    margin-left: 500px; /* Adjust this value to move the menu left or right */
+    margin-left: 800px; /* Adjust this value to move the menu left or right */
 }
 
 nav ul li {
