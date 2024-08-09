@@ -1,65 +1,39 @@
-:root {
-    --primary-color: #007BFF;
-    --secondary-color: #0056b3;
-    --background-color: #000;
-    --text-color: white;
-    --font-size-base: 1rem;
-    --font-size-large: 2rem;
-    --padding-base: 10px;
-    --margin-base: 15px;
-    --header-height: 60px;
-    --hero-image: url('206 mountain_upscayl_3x_realesrgan-x4plus.jpg'); /* Background image */
-}
-
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Proxima Nova', sans-serif;
-    color: var(--text-color);
-    background-color: var(--background-color);
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #fff;
+    background-color: #000;
 }
 
-header {
+#main-header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
     position: fixed;
     width: 100%;
-    height: var(--header-height);
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--padding-base) calc(var(--padding-base) * 2);
 }
 
-.siteTitle h1 {
-    font-size: var(--font-size-large);
+#main-header h1, #main-header h2 {
     margin: 0;
-    color: white;
 }
 
-.logo-subtitle {
-    font-size: var(--font-size-base);
-    margin: 0;
-    color: white;
-}
-
-nav ul {
+#main-header nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
 
-nav ul li {
-    margin: 0 calc(var(--margin-base) * 1);
+#main-header nav ul li {
+    margin: 0 15px;
 }
 
-nav ul li a {
+#main-header nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: var(--font-size-base);
 }
 
 #hero {
@@ -70,39 +44,40 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: var(--hero-image);
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    margin: 0;
+    font-size: 4rem;
 }
 
 .hero-content p {
     font-size: 1.5rem;
-    margin-top: 10px;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 footer {
-    padding: var(--padding-base) 0;
+    padding: 20px;
     background-color: rgba(0, 0, 0, 0.9);
-    color: white;
     text-align: center;
 }
 
-.footer-content ul {
+.social-links {
     list-style: none;
     padding: 0;
-    margin: 10px 0;
     display: flex;
     justify-content: center;
 }
 
-.footer-content ul li {
+.social-links li {
     margin: 0 10px;
 }
 
-.footer-content ul li a {
+.social-links li a {
     color: white;
     text-decoration: none;
 }
