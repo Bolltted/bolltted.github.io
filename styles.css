@@ -23,6 +23,18 @@ header {
 }
 
 /* Underline animation on hover */
+nav ul {
+    list-style: none; /* Removes bullets */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; /* Horizontally align items */
+}
+
+nav ul li {
+    margin-right: 20px; /* Add space between navigation items */
+}
+
 nav ul li a::after {
     content: '';
     position: absolute;
@@ -41,36 +53,21 @@ nav ul li a:hover::after {
     background: white;
 }
 
-/* Positioning and Size Classes (Customizable for Each Page) */
+/* Consistent Positioning and Size Classes */
 
-/* Home Page */
-.home-nav-home { left: 800px; top: 10px; font-size: 2rem; }
-.home-nav-about { left: 900px; top: 10px; font-size: 2rem; }
-.home-nav-gallery { left: 1000px; top: 10px; font-size: 2rem; }
-.home-nav-contact { left: 1100px; top: 10px; font-size: 2rem; }
-.home-name { left: 20px; top: 10px; font-size: 5rem; }
-.home-qualifications { left: 20px; top: 20px; font-size: 2rem; }
+/* Global Sizes */
+.global-name { font-size: 5rem; } /* Set the name font size globally */
+.global-qualifications { font-size: 1.5rem; } /* Set the qualifications font size globally */
 
-/* About Page */
-.about-nav-home { left: 800px; top: 20px; font-size: 1.1rem; }
-.about-nav-about { left: 900px; top: 20px; font-size: 1.1rem; }
-.about-nav-gallery { left: 1000px; top: 20px; font-size: 1.1rem; }
-.about-nav-contact { left: 1100px; top: 20px; font-size: 1.1rem; }
-.about-name { left: 20px; top: 10px; font-size: 5rem; }
-.about-qualifications { left: 20px; top: 20px; font-size: 2rem; }
+/* Navigation Links */
+.global-nav { font-size: 1rem; } /* Set the same font size for all navigation links */
 
-/* Gallery Page */
-.gallery-nav-home { left: 800px; top: 30px; font-size: 1.2rem; }
-.gallery-nav-about { left: 900px; top: 30px; font-size: 1.2rem; }
-.gallery-nav-gallery { left: 1000px; top: 30px; font-size: 1.2rem; }
-.gallery-nav-contact { left: 1100px; top: 30px; font-size: 1.2rem; }
-.gallery-name { left: 20px; top: 10px; font-size: 5rem; }
-.gallery-qualifications { left: 20px; top: 20px; font-size: 2rem; }
-
-/* Contact Page */
-.contact-nav-home { left: 800px; top: 40px; font-size: 1.3rem; }
-.contact-nav-about { left: 900px; top: 40px; font-size: 1.3rem; }
-.contact-nav-gallery { left: 1000px; top: 40px; font-size: 1.3rem; }
-.contact-nav-contact { left: 1100px; top: 40px; font-size: 1.3rem; }
-.contact-name { left: 20px; top: 10px; font-size: 5rem; }
-.contact-qualifications { left: 20px; top: 20px; font-size: 2rem; }
+/* Hero Section for Background Image */
+.hero {
+    height: 100vh;
+    background: url('path_to_your_background_image.jpg') no-repeat center center/cover; /* Ensure correct path */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
