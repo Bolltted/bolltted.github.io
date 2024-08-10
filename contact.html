@@ -1,0 +1,175 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Contact - Keylan Tarasoff</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .logo, .page-title {
+            font-family: 'Playfair Display', serif;
+        }
+        .form-input {
+            border-color: #2563eb;
+        }
+        .form-input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px #2563eb;
+            outline: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <a class="logo group mb-4 md:mb-0" href="/">
+                    <h1 class="text-4xl font-bold text-center md:text-left">
+                        <span class="text-3xl tracking-[0.3em] group-hover:text-blue-600">KEYLAN</span><br/>
+                        <span class="text-5xl group-hover:text-blue-600">TARASOFF</span>
+                    </h1>
+                </a>
+                <nav class="flex flex-col md:flex-row items-center">
+                    <ul class="flex flex-wrap justify-center space-x-4 md:space-x-6 text-sm uppercase mb-4 md:mb-0">
+                        <li><a class="hover:text-blue-600" href="/services/">Services</a></li>
+                        <li><a class="hover:text-blue-600" href="/about/">About</a></li>
+                        <li><a class="hover:text-blue-600" href="/merch/">Merch</a></li>
+                        <li><a class="hover:text-blue-600" href="/contact/">Contact</a></li>
+                    </ul>
+                    <div class="relative mt-4 md:mt-0 md:ml-6">
+                        <input type="text" id="search-input" placeholder="Search..." class="w-full md:w-auto pl-8 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
+                        <button id="search-button" class="absolute left-2 top-1/2 transform -translate-y-1/2">
+                            <i class="fas fa-search text-gray-400 hover:text-blue-600 transition-colors duration-200"></i>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container mx-auto px-4 py-12">
+        <h1 class="page-title text-4xl md:text-5xl font-bold mb-12 text-center">Contact Us</h1>
+        
+        <section class="bg-white p-8 rounded-lg shadow-lg mb-16 max-w-2xl mx-auto">
+            <form id="contact-form" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                    <input type="text" id="name" name="name" required class="form-input mt-1 block w-full rounded-md shadow-sm">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Your Email</label>
+                    <input type="email" id="email" name="email" required class="form-input mt-1 block w-full rounded-md shadow-sm">
+                </div>
+                <div>
+                    <label for="confirm-email" class="block text-sm font-medium text-gray-700">Confirm Email</label>
+                    <input type="email" id="confirm-email" name="confirm-email" required class="form-input mt-1 block w-full rounded-md shadow-sm">
+                </div>
+                <div>
+                    <label for="topic" class="block text-sm font-medium text-gray-700">Email Topic</label>
+                    <select id="topic" name="topic" required class="form-input mt-1 block w-full rounded-md shadow-sm">
+                        <option value="">Select a topic</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="broken-link">Broken Link</option>
+                        <option value="error">Error on the Website</option>
+                        <option value="technical-issue">Technical Issue</option>
+                        <option value="newsletter">Newsletter</option>
+                        <option value="abuse">Abuse</option>
+                        <option value="website">The Website</option>
+                        <option value="sales">Sales</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
+                    <textarea id="message" name="message" rows="4" required class="form-input mt-1 block w-full rounded-md shadow-sm"></textarea>
+                </div>
+                <div class="g-recaptcha" data-sitekey="6LdL0iMqAAAAANuuB78Dkq8JNPJ-8nzCVOP4a0x-"></div>
+                <div>
+                    <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors duration-200">Submit</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="bg-blue-900 text-white mt-16">
+        <div class="container mx-auto px-4 py-12">
+            <div class="flex flex-col md:flex-row mb-12">
+                <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-4">Stay updated with the latest in aviation technology.</h2>
+                </div>
+                <div class="w-full md:w-1/2 bg-white text-black p-6 rounded-lg">
+                    <h3 class="text-blue-900 text-xl font-bold mb-4">Newsletter Signup</h3>
+                    <iframe src="https://stats.sender.net/forms/e7Nz8d/view" width="100%" height="300" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row text-sm">
+                <div class="w-full md:w-1/3 mb-8 md:mb-0">
+                    <h4 class="font-bold mb-2">Navigation</h4>
+                    <ul>
+                        <li><a href="/services/" class="hover:text-blue-300">Services</a></li>
+                        <li><a href="/about/" class="hover:text-blue-300">About</a></li>
+                        <li><a href="/merch/" class="hover:text-blue-300">Merch</a></li>
+                        <li><a href="/contact/" class="hover:text-blue-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/3 mb-8 md:mb-0">
+                    <h4 class="font-bold mb-2">Connect</h4>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/keylan/" target="_blank" class="hover:text-blue-300">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <img src="https://i.imgur.com/cirhs6H.jpeg" alt="Keylan Tarasoff standing in front of a helicopter" class="w-full rounded-lg shadow-lg"/>
+                </div>
+            </div>
+            <div class="mt-8 text-xs">
+                <p>© Copyright 2024. Keylan Tarasoff. All Rights Reserved.</p>
+                <p><a href="/privacy/" class="hover:text-blue-300">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.getElementById('search-button').addEventListener('click', performSearch);
+    document.getElementById('search-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+
+    function performSearch() {
+        const query = document.getElementById('search-input').value;
+        if (query) {
+            const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}+site:keylantarasoff.com`;
+            window.open(searchUrl, '_blank');
+        }
+    }
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        if(grecaptcha.getResponse() == "") {
+            alert("Please complete the reCAPTCHA");
+            return false;
+        }
+        const topic = document.getElementById('topic').value;
+        const email = topic === 'sales' ? 'sales@keylantarasoff.com' : 'admin@keylantarasoff.com';
+        // Here you would typically send the form data to your server
+        alert(`Thank you for your message. We will respond to you soon.`);
+    });
+    </script>
+
+    <style>
+    #search-button:hover i {
+        color: #2563eb; /* Tailwind's blue-600 */
+    }
+    #search-input:focus + #search-button i {
+        color: #2563eb;
+    }
+    </style>
+</body>
+</html>
