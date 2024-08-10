@@ -100,7 +100,7 @@
                     <textarea id="message" name="message" rows="4" required class="form-input mt-1 block w-full rounded-md shadow-sm"></textarea>
                 </div>
                 <div>
-                    <button type="submit" class="g-recaptcha w-full bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors duration-200" data-sitekey="6LdL0iMqAAAAANuuB78Dkq8JNPJ-8nzCVOP4a0x-" data-callback='onSubmit' data-action='submit'>Submit</button>
+                    <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors duration-200">Submit</button>
                 </div>
             </form>
         </section>
@@ -160,17 +160,51 @@
         }
     }
 
-    function onSubmit(token) {
-        document.getElementById("contact-form").submit();
-    }
-
     document.getElementById('contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
+        grecaptcha.enterprise.ready(function() {
+            grecaptcha.enterprise.execute('6LdL0iMqAAAAANuuB78Dkq8JNPJ-8nzCVOP4a0x-', {action: 'submit'}).then(function(token) {
+                validateRecaptcha(token);
+            });
+        });
+    });
+
+    function validateRecaptcha(token) {
+        const requestBody = {
+            event: {
+                token: token,
+                expectedAction: "submit",
+                siteKey: "6LdL0iMqAAAAANuuB78Dkq8JNPJ-8nzCVOP4a0x-"
+            }
+        };
+
+        fetch('https://recaptchaenterprise.googleapis.com/v1/projects/keylan-website-1723301269858/assessments?key=YOUR_API_KEY', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestBody)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.tokenProperties.valid && data.riskAnalysis.score > 0.5) {
+                submitForm();
+            } else {
+                alert('reCAPTCHA validation failed. Please try again.');
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again later.');
+        });
+    }
+
+    function submitForm() {
         const topic = document.getElementById('topic').value;
         const email = topic === 'sales' ? 'sales@keylantarasoff.com' : 'admin@keylantarasoff.com';
         // Here you would typically send the form data to your server
         alert(`Thank you for your message. We will respond to you soon.`);
-    });
+    }
     </script>
 
     <style>
