@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # Fetch the current and previous commit
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -39,11 +41,13 @@ jobs:
           # Get changed files from the push
           try:
               changed_files = subprocess.check_output(['git', 'diff', '--name-only', 'HEAD^', 'HEAD']).decode().splitlines()
+              print("Changed files:", changed_files)  # Debugging output
           except subprocess.CalledProcessError:
               print("No previous commit found.")
               changed_files = []
 
           urls = [f'{SITE_URL}/{f}' if not f.startswith('/') else f'{SITE_URL}{f}' for f in changed_files]
+          print("URLs to submit:", urls)  # Debugging output
 
           # Authenticate with service account
           credentials = service_account.Credentials.from_service_account_file(
