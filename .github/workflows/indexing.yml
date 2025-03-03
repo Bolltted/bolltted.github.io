@@ -2,7 +2,7 @@ name: Submit URLs to Google Indexing API
 on:
   push:
     branches:
-      - main  # Change to your default branch if it’s 'master' or something else
+      - main  # Change to 'master' or your default branch if different
 jobs:
   submit-urls:
     runs-on: ubuntu-latest
@@ -21,13 +21,13 @@ jobs:
         run: |
           echo "$GOOGLE_SERVICE_ACCOUNT_KEY" > service-account-key.json
           python -c "
+import subprocess
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
-import subprocess
 
-# Your site URL (update based on your domain)
-SITE_URL = 'https://keylantarasoff.com'  # Or 'https://bolltted.github.io'
+# Your site URL (update if different)
+SITE_URL = 'https://keylantarasoff.com'  # Replace with 'https://bolltted.github.io' if using GitHub Pages
 
 # Get all changed files from the push
 changed_files = subprocess.check_output(['git', 'diff', '--name-only', 'HEAD^', 'HEAD']).decode().splitlines()
