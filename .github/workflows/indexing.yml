@@ -20,7 +20,7 @@ jobs:
           GOOGLE_SERVICE_ACCOUNT_KEY: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY }}
         run: |
           echo "$GOOGLE_SERVICE_ACCOUNT_KEY" > service-account-key.json
-          python -c "
+          python <<EOF
 import subprocess
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
@@ -49,4 +49,4 @@ for url in urls:
         print(f'Submitted {url} successfully.')
     except HttpError as e:
         print(f'Error submitting {url}: {e}')
-"
+EOF
