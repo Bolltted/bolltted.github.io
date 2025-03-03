@@ -37,7 +37,12 @@ jobs:
           SITE_URL = 'https://keylantarasoff.com'
 
           # Get changed files from the push
-          changed_files = subprocess.check_output(['git', 'diff', '--name-only', 'HEAD^', 'HEAD']).decode().splitlines()
+          try:
+              changed_files = subprocess.check_output(['git', 'diff', '--name-only', 'HEAD^', 'HEAD']).decode().splitlines()
+          except subprocess.CalledProcessError:
+              print("No previous commit found.")
+              changed_files = []
+
           urls = [f'{SITE_URL}/{f}' if not f.startswith('/') else f'{SITE_URL}{f}' for f in changed_files]
 
           # Authenticate with service account
