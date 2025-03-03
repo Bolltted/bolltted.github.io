@@ -26,12 +26,12 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 import subprocess
 
-# Your site URL
-SITE_URL = 'https://keylantarasoff.com'
+# Your site URL (update based on your domain)
+SITE_URL = 'https://keylantarasoff.com'  # Or 'https://bolltted.github.io'
 
-# Get changed HTML files from the push
+# Get all changed files from the push
 changed_files = subprocess.check_output(['git', 'diff', '--name-only', 'HEAD^', 'HEAD']).decode().splitlines()
-urls = [f'{SITE_URL}/{f}' if not f.startswith('/') else f'{SITE_URL}{f}' for f in changed_files if f.endswith('.html')]
+urls = [f'{SITE_URL}/{f}' if not f.startswith('/') else f'{SITE_URL}{f}' for f in changed_files]
 
 # Authenticate with service account
 credentials = service_account.Credentials.from_service_account_file(
@@ -40,7 +40,7 @@ credentials = service_account.Credentials.from_service_account_file(
 )
 service = build('indexing', 'v3', credentials=credentials)
 
-# Submit URLs
+# Submit all URLs
 for url in urls:
     try:
         response = service.urlNotifications().publish(
